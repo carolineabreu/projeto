@@ -30,7 +30,7 @@ export function Home() {
             {items.map((currentItems) => {
             return (
             <Link to={`/${currentItems._id}`}>
-                <h2>{currentItems.product}
+                <h2>{currentItems.productName}
                 </h2>{" "}
             </Link>
            );
