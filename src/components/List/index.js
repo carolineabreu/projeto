@@ -6,9 +6,9 @@ export function List(props) {
       {props.map((currentproduct) => {
         return (
           <Card
-            product={productName}
-            quantity={productQuantity}
-            image={productImage}
+            product={currentproduct.productName}
+            quantity={currentproduct.productQuantity}
+            image={currentproduct.productImage}
           />
         );
       })}
