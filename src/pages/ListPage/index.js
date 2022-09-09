@@ -25,9 +25,9 @@ export function ListPage() {
 
   return (
     <>
-      <h1>{List.productName}</h1>
-      <p>{List.productQuantity}</p>
-      <p>{List.productPicture}</p>
+      <h1>{list.productName}</h1>
+      <p>{list.productQuantity}</p>
+      <p>{list.productImage}</p>
     </>
   );
 }
