@@ -25,7 +25,6 @@ export function ListPage() {
 
   return (
     <>
-      <h1>{list.listName}</h1>
       <p>{list.productName}</p>
       <p>{list.productQuantity}</p>
       <p>{list.productImage}</p>
