@@ -9,8 +9,8 @@ function App() {
     <div>
       <NavBar />
       <Routes>
-        <Route path = "/" element = {<Home />} />
-        <Route path="/crate-list" element={<CreateList />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/create-list" element={<CreateList />} />
         <Route path="/list-page" element={<ListPage />} />
       </Routes>
     </div>
