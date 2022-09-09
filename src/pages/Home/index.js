@@ -23,13 +23,11 @@ export function Home() {
 
     return (
         <>
-            <Link to="/list-page">
-            <h1>Shopping List </h1>
-            </Link>
+           
             {items.map((currentItems) => {
             return (
             <Link to={`/${currentItems._id}`}>
-                <h2>{currentItems.productName}
+                <h2>{currentItems.ListName}
                 </h2>{" "}
             </Link>
            );
