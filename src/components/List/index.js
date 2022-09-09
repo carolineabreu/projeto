@@ -1,31 +1,15 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import { Card } from "../Card";
 
-export function Home() {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    async function fetchItems() {
-      try {
-        const response = await axios.get(
-          "https://ironrest.herokuapp.com/shoppinglist"
-        );
-        setItems([...response.data]);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    fetchItems();
-  }, []);
-
+export function List(props) {
   return (
     <>
-      {items.map((currentItems) => {
+      {props.map((currentproduct) => {
         return (
-          <Link to={`/${currentItems._id}`}>
-            <h2>Shopping List </h2>{" "}
-          </Link>
+          <Card
+            product={productName}
+            quantity={productQuantity}
+            image={productImage}
+          />
         );
       })}
     </>
