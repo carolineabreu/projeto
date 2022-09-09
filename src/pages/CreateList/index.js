@@ -8,8 +8,8 @@ export function CreateList() {
 
   const [form, setForm] = useState({
     productName: "",
-    quantity: "",
-    image: ""
+    productQuantity: "",
+    productImage: ""
   });
 
   function handleChange(e) {
