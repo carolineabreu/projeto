@@ -2,10 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/Navbar";
 import { Home } from "./pages/Home";
 import {Form} from "./components/Form"
+import "./App.css"
 
 function App() {
   return (
-    <div>
+    <div className = "container">
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
