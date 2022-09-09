@@ -23,7 +23,6 @@ export function Home() {
 
     return (
         <>
-           
             {items.map((currentItems) => {
             return (
             <Link to={`/${currentItems._id}`}>
