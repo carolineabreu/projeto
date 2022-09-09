@@ -23,9 +23,8 @@ export function Home() {
 
     return (
         <>
+            <Link to="/ListPage">
             <h1>Shopping List </h1>
-            <Link to="/create-list">
-                <button> Add Item</button>
             </Link>
             {items.map((currentItems) => {
             return (
