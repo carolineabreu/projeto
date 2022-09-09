@@ -60,7 +60,7 @@ export function CreateList() {
         id="quantity"
         name="quantity"
         type="number"
-        value={form.quantity}
+        value={form.productQuantity}
         onChange={handleChange}
       />
 
@@ -69,7 +69,7 @@ export function CreateList() {
         id="image"
         name="image"
         type="text"
-        value={form.image}
+        value={form.productImage}
         onChange={handleChange}
       />
 
