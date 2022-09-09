@@ -7,6 +7,7 @@ export function CreateList() {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
+    listName: "",
     productName: "",
     productQuantity: "",
     productImage: ""
@@ -35,6 +36,16 @@ export function CreateList() {
 
   return (
     <form onSubmit={handleSubmit}>
+
+      <label htmlFor="list">List: </label>
+      <input
+        id="list"
+        name="listName"
+        type="text"
+        value={form.listName}
+        onChange={handleChange}
+      />
+
       <label htmlFor="product">Product: </label>
       <input
         id="product"
