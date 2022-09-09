@@ -23,7 +23,7 @@ export function Home() {
 
     return (
         <>
-            <Link to="/ListPage">
+            <Link to="/list-page">
             <h1>Shopping List </h1>
             </Link>
             {items.map((currentItems) => {
