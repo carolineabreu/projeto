@@ -4,6 +4,7 @@ import { AddProduct } from "./pages/AddProduct";
 import { EditPage } from "./pages/EditPage";
 import { Home } from "./pages/Home";
 import { ProductPage } from "./pages/ProductPage";
+import "./style.css";
 
 function App() {
   return (

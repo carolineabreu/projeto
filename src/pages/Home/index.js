@@ -22,20 +22,20 @@ export function Home() {
   }, []);
 
   return (
-    <>
+    <div className="container">
       {product.map((currentProduct) => {
         return (
-          <>
+          <div className="sub-container">
             <Link to={`/${currentProduct._id}`}>
               <img src={currentProduct.image} alt={currentProduct.name} />
             </Link>
 
             <h1>{currentProduct.name}</h1>
             <p>Quantity: {currentProduct.quantity}</p>
-          </>
+          </div>
         );
       })}
-    </>
+    </div>
   );
 }
 

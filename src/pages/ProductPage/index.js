@@ -37,15 +37,21 @@ export function ProductPage() {
   }
 
   return (
-    <>
-      <img src={product.image} alt={product.name} />
-      <h2>{product.name}</h2>
-      <p>Quantity: {product.quantity}</p>
+    <div className="product-page">
+      <div className="sub-product">
+        <img src={product.image} alt={product.name} />
+        <div className="product">
+          <h2>{product.name}</h2>
+          <p><strong>Quantity: </strong> {product.quantity}</p>
+        </div>
 
-      <Link to={`/edit/${id}`}>
-        <button>Edit</button>
-      </Link>
-      <button onClick={handleDelete}>Delete</button>
-    </>
+        <div className="product-btn">
+          <Link to={`/edit/${id}`}>
+            <button>Edit</button>
+          </Link>
+          <button onClick={handleDelete}>Delete</button>
+        </div>
+      </div>
+    </div>
   );
 }
