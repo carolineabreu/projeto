@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { ProductList } from "../../components/ProductList";
+import { Link } from "react-router-dom";
+// import { ProductList } from "../../components/ProductList";
 
 export function Home() {
   const [product, setProduct] = useState([]);
@@ -24,15 +25,17 @@ export function Home() {
     <>
       {product.map((currentProduct) => {
         return (
-          <ProductList product={{
-            image: currentProduct.image,
-            name: currentProduct.name,
-            quantity: currentProduct.quantity
-          }}
-            key={currentProduct.name}
-          />
+          <>
+            <Link to={`/${currentProduct._id}`}>
+              <img src={currentProduct.image} alt={currentProduct.name} />
+            </Link>
+
+            <h1>{currentProduct.name}</h1>
+            <p>Quantity: {currentProduct.quantity}</p>
+          </>
         );
       })}
     </>
   );
 }
+
