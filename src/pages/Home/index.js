@@ -1,33 +1,36 @@
-import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { List } from "../../components/List";
-import { Form } from "../../components/Form";
+import { useEffect, useState } from "react";
+import { ProductList } from "../../components/ProductList";
 
 export function Home() {
-  const [items, setItems] = useState([]);
+  const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    async function fetchItems() {
+    async function fetchProduct() {
       try {
         const response = await axios.get(
-          "https://ironrest.herokuapp.com/shoppinglist"
+          "https://ironrest.herokuapp.com/shopping-list-clz"
         );
-        setItems([...response.data]);
+
+        setProduct([...response.data]);
       } catch (err) {
         console.log(err);
       }
     }
-    fetchItems();
+    fetchProduct();
   }, []);
 
   return (
     <>
-      {items.map((currentItems) => {
+      {product.map((currentProduct) => {
         return (
-          <Link to={`/${currentItems._id}`}>
-            <h2>Shopping List </h2>{" "}
-          </Link>
+          <ProductList product={{
+            image: currentProduct.image,
+            name: currentProduct.name,
+            quantity: currentProduct.quantity
+          }}
+            key={currentProduct.name}
+          />
         );
       })}
     </>

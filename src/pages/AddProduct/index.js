@@ -1,16 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
-
-
 import { useNavigate } from "react-router-dom";
 
-export function Form () {
+export function AddProduct() {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    productName: "",
-    productQuantity: 0,
-    productImage: ""
+    image: "",
+    name: "",
+    quantity: 0
   });
 
   function handleChange(e) {
@@ -22,7 +20,7 @@ export function Form () {
 
     try {
       const response = await axios.post(
-        "https://ironrest.herokuapp.com/shoppinglist",
+        "https://ironrest.herokuapp.com/shopping-list-clz",
         form
       );
 
@@ -36,35 +34,34 @@ export function Form () {
 
   return (
     <form onSubmit={handleSubmit}>
-
-      <label htmlFor="product">Product: </label>
+      <label htmlFor="image">Image: </label>
       <input
-        id="product"
-        name="productName"
+        id="image"
+        name="image"
         type="text"
-        value={form.productName}
+        value={form.image}
+        onChange={handleChange}
+      />
+
+      <label htmlFor="name">Product: </label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        value={form.name}
         onChange={handleChange}
       />
 
       <label htmlFor="quantity">Quantity: </label>
       <input
         id="quantity"
-        name="productQuantity"
+        name="quantity"
         type="number"
-        value={form.productQuantity}
+        value={form.quantity}
         onChange={handleChange}
       />
 
-      <label htmlFor="image">Image: </label>
-      <input
-        id="image"
-        name="productImage"
-        type="text"
-        value={form.productImage}
-        onChange={handleChange}
-      />
-
-      <button type="submit">Send</button>
+      <button type="submit">Add!</button>
     </form>
   );
 }
